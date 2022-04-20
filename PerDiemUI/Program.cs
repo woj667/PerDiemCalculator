@@ -1,3 +1,5 @@
+using System.Globalization;
+
 namespace PerDiemUI
 {
     internal static class Program
@@ -8,6 +10,8 @@ namespace PerDiemUI
         [STAThread]
         private static void Main()
         {
+            Thread.CurrentThread.CurrentCulture = CultureInfo.InvariantCulture;
+
             ApplicationConfiguration.Initialize();
             Application.Run(new CalculatorForm());
         }
